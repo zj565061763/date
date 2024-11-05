@@ -50,13 +50,13 @@ fun fDate(
    month: Int,
    dayOfMonth: Int,
 ): FDate {
-   val legalYear = year.coerceAtLeast(1)
-   val legalMonth = month.coerceIn(1, 12)
-   val legalDayOfMonth = dayOfMonth.coerceIn(1, maxDayOfMonth(legalYear, legalMonth))
+   val safeYear = year.coerceAtLeast(1)
+   val safeMonth = month.coerceIn(1, 12)
+   val safeDayOfMonth = dayOfMonth.coerceIn(1, maxDayOfMonth(safeYear, safeMonth))
    return FDate(
-      year = legalYear,
-      month = legalMonth,
-      dayOfMonth = legalDayOfMonth,
+      year = safeYear,
+      month = safeMonth,
+      dayOfMonth = safeDayOfMonth,
    )
 }
 

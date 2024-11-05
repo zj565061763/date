@@ -67,7 +67,7 @@ class DateTest {
    }
 
    @Test
-   fun `test legal start`() {
+   fun `test safe start`() {
       fDate(0, 0, 0).run {
          assertEquals(1, year)
          assertEquals(1, month)
@@ -76,7 +76,7 @@ class DateTest {
    }
 
    @Test
-   fun `test legal end`() {
+   fun `test safe end`() {
       fDate(0, 100, 0).run {
          assertEquals(12, month)
       }
