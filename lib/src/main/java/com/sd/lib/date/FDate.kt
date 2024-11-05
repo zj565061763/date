@@ -52,9 +52,7 @@ fun fDate(
 ): FDate {
    val legalYear = year.coerceAtLeast(1)
    val legalMonth = month.coerceIn(1, 12)
-   val legalDayOfMonth = maxDayOfMonth(legalYear, legalMonth).let { maxDayOfMonth ->
-      dayOfMonth.coerceIn(1, maxDayOfMonth)
-   }
+   val legalDayOfMonth = dayOfMonth.coerceIn(1, maxDayOfMonth(legalYear, legalMonth))
    return FDate(
       year = legalYear,
       month = legalMonth,
