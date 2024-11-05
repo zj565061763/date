@@ -41,7 +41,7 @@ class FDate internal constructor(
    }
 
    override fun toString(): String {
-      return "${year}-${month}-${dayOfMonth}"
+      return "${year}-${month.leadingZero()}-${dayOfMonth.leadingZero()}"
    }
 }
 
@@ -107,5 +107,13 @@ private fun maxDayOfMonth(year: Int, month: Int): Int {
       set(Calendar.YEAR, year)
       set(Calendar.MONTH, month - 1)
       getActualMaximum(Calendar.DAY_OF_MONTH)
+   }
+}
+
+private fun Int.leadingZero(size: Int = 2): String {
+   return toString().let {
+      val repeat = size - it.length
+      if (repeat > 0) "0".repeat(repeat) + it
+      else it
    }
 }

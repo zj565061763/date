@@ -18,6 +18,12 @@ class DateTest {
    }
 
    @Test
+   fun `test leading zero`() {
+      val dateStr = fDate(2024, 1, 1).toString()
+      assertEquals("2024-01-01", dateStr)
+   }
+
+   @Test
    fun `test copy`() {
       val date = fDate(2024, 10, 20)
 
