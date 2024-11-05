@@ -34,8 +34,6 @@ androidx-test-espresso-core = "androidx.test.espresso:espresso-core:3.6.1"
 kotlinx-coroutines = "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.8.1"
 kotlinx-coroutines-test = "org.jetbrains.kotlinx:kotlinx-coroutines-test:1.8.1"
 
-sd-compose-wheelPicker = "com.github.zj565061763:compose-wheel-picker:f4e2834d00"
-
 [plugins]
 
 android-application = { id = "com.android.application", version.ref = "androidGradlePlugin" }
